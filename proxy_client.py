@@ -1,3 +1,7 @@
+'''
+Part 6
+'''
+
 import socket
 
 BYTES_TO_READ = 4096
@@ -7,7 +11,6 @@ def get(host, port):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host,port))
         s.send(request)
-        # Shut the socket to further writes
         s.shutdown(socket.SHUT_WR)
         
         print("Waiting for response!")
